@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+  <title>jejx </title>
+  <link rel="stylesheet" href="../build/css/app.css">
+</head>
+<body>
+  <div class="mensaje-container"></div>
+  <div class="layout">
+    <aside class="sidebar"></aside>
+
+    <main class="content">
+      <div class="data-area">
+        <input type="text" class="item-search" placeholder="Search item" disabled>
+
+        <div class="new-order">
+          <button type="button" class="new-order-button">
+            <h1>New Order</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.46 5.91"><path d="M.2 2.49.04 4.21c-.05.53-.08.8.03 1.05.09.22.26.4.47.52.24.13.51.13 1.05.13h2.27c.54 0 .81 0 1.05-.13.21-.11.38-.3.47-.52.11-.25.08-.52.03-1.05l-.16-1.72c-.04-.44-.06-.68-.19-.89-.11-.18-.27-.33-.46-.42-.15-.07-.32-.09-.56-.1C3.99.82 3.86.59 3.67.4 3.42.15 3.08.01 2.72.01s-.7.14-.95.39c-.19.19-.32.43-.37.68-.24 0-.41.03-.56.1-.19.09-.35.24-.46.42-.12.21-.15.45-.19.89m.55.05c.03-.36.05-.56.11-.66.05-.09.13-.16.23-.21.06-.03.16-.04.3-.05v.53c0 .15.12.27.27.27s.27-.12.27-.27v-.54h1.61v.54c0 .15.12.27.27.27s.27-.12.27-.27v-.53c.14 0 .24.02.3.05.1.05.18.12.23.21.06.1.08.3.11.66l.16 1.72c.04.43.06.67 0 .79a.55.55 0 0 1-.24.26c-.12.07-.36.07-.79.07H1.6c-.43 0-.67 0-.79-.07a.55.55 0 0 1-.24-.26c-.05-.13-.03-.36 0-.79l.16-1.72m2-2a.8.8 0 0 1 .76.54H1.97c.11-.31.41-.54.76-.54Z"/></svg>
+          </button>
+        </div>
+
+      <div class="purchase"></div>
+      </div>
+
+      <div class="keyboard keyboard-hidden">
+        <div class="keyboard-keys">
+          <button type="button" class="keyboard-key top-left" data-key="1">1</button>
+          <button type="button" class="keyboard-key" data-key="2">2</button>
+          <button type="button" class="keyboard-key top-right" data-key="3">3</button>
+          <button type="button" class="keyboard-key" data-key="4">4</button>
+          <button type="button" class="keyboard-key" data-key="5">5</button>
+          <button type="button" class="keyboard-key" data-key="6">6</button>
+          <button type="button" class="keyboard-key" data-key="7">7</button>
+          <button type="button" class="keyboard-key" data-key="8">8</button>
+          <button type="button" class="keyboard-key" data-key="9">9</button>
+          <button type="button" class="keyboard-key bottom-left" data-key="clr">CLR</button>
+          <button type="button" class="keyboard-key" data-key="0">0</button>
+          <button type="button" class="keyboard-key bottom-right" data-key="del">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><g data-name="Capa_2"><path d="M49.82 17.06a7.507 7.507 0 0 0-3.32-3.32c-1.62-.83-3.38-.83-6.87-.83H25.2c-1.25 0-1.94 0-2.7.22-.68.19-1.31.51-1.88.94-.64.48-1.05 1.03-1.8 2.03l-8.2 10.94c-.58.77-.96 1.28-1.15 1.99-.17.63-.17 1.3 0 1.93.19.72.57 1.23 1.15 1.99s8.2 10.94 8.2 10.94c.75 1 1.16 1.55 1.8 2.03.56.43 1.2.75 1.88.94.77.22 1.45.22 2.7.22h14.43c3.49 0 5.24 0 6.87-.83a7.507 7.507 0 0 0 3.32-3.32c.83-1.62.83-3.38.83-6.87V23.91c0-3.49 0-5.24-.83-6.87ZM40.6 34.35a1.907 1.907 0 0 1-1.34 3.25c-.48 0-.97-.19-1.34-.56l-4.35-4.35-4.35 4.35c-.74.74-1.94.74-2.69 0-.74-.74-.74-1.94 0-2.69L30.88 30l-4.35-4.35c-.74-.74-.74-1.94 0-2.69.74-.74 1.94-.74 2.69 0l4.35 4.35 4.35-4.35c.74-.74 1.94-.74 2.69 0 .74.74.74 1.94 0 2.69L36.26 30l4.35 4.35Z"/><path style="fill:none" d="M0 0h60v60H0z"/></g></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <section class="bill-details">
+      <div class="bill-advice">
+        <h1>Start a New Order</h1>
+        <p>Click the Button</p>
+      </div>
+      <div class="bill-container">
+        <div class="bill-section">
+          <h1>Bill Details</h1>
+          <p class="bill-id"></p>
+        </div>
+
+        <div class="bill-dashboard">
+          <div class="bill-products"></div>
+        </div>
+
+        <hr class="separator">
+
+        <div class="payment-info">
+          <div class="left-info">
+            <p>Subtotal</p>
+            <p>Discount</p>
+            <p>Tax</p>
+          </div>
+          <div class="right-info">
+            <p class="subtotal">$0.00</p>
+            <input type="number" class="discount-input" min="0" value="0" />
+            <p class="taxes">$0.00</p>
+          </div>
+        </div>
+
+        <hr class="separator">
+
+        <div class="payment-total">
+          <div class="total">
+            <p>Total</p>
+            <p class="total-amount">$0.00</p>
+          </div>
+          <button class="checkout-button" disabled>Go to Checkout</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="payment-modal">
+    <div class="payment-content">
+      <div class="payment-details">
+        <div class="payment-header">
+          <h1>Payment Details</h1>
+          <button class="cross modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.24 5.24"><path d="M5.1 4.39 3.33 2.62 5.1.85c.2-.2.2-.51 0-.71s-.51-.2-.71 0L2.62 1.91.85.15c-.19-.2-.51-.2-.7 0s-.2.51 0 .7l1.77 1.77L.15 4.39c-.2.2-.2.51 0 .71s.51.2.71 0l1.77-1.77L4.4 5.1c.2.2.51.2.71 0s.2-.51 0-.71Z"/></svg>
+          </button>
+        </div>
+
+        <div class="payment-modal-info">
+          <div class="payment-transaction">
+            <div class="transaction-details">
+              <p>Transaction Details</p>
+              <div class="transaction-items">
+                <div class="transaction-item">
+                  <div>
+                    <p>Frijol La Costeña 500g</p>
+                    <p>$400.00</p>
+                  </div>
+                  <p>1x</p>
+                </div>
+              </div>
+              <div class="transaction-payment">
+                <div class="transaction-items-details">
+                  <p class="transaction-left">Subtotal</p>
+                  <p class="modal-subtotal">$566.56</p>
+                </div>
+                <div class="transaction-items-details">
+                  <p class="transaction-left">Tax(16%)</p>
+                  <p class="modal-taxes">$55.32</p>
+                </div>
+                <div class="transaction-items-details">
+                  <p class="transaction-left">Total</p>
+                  <p class="modal-total">$5464.54</p>
+                </div>
+                <div class="transaction-items-details" id="change-container">
+                  <p>Change</p>
+                  <p class="modal-change">$55.32</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="payment-cash">
+            <div class="payment-method">
+              <div class="methods">
+                <input type="radio" id="cash" name="payment" class="payment-option" checked>
+                <label for="cash" class="payment-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.19 5.91"><path d="M6.68 5.91H1.51c-.46 0-.71 0-.94-.12-.2-.1-.36-.26-.46-.46-.12-.23-.12-.48-.12-.94V1.51c0-.46 0-.71.12-.94.1-.2.26-.36.46-.46.23-.12.48-.12.94-.12h5.17c.46 0 .71 0 .94.12.2.1.36.26.46.46.12.23.12.48.12.94V4.4c0 .46 0 .71-.12.94-.1.2-.26.36-.46.46-.23.12-.48.12-.94.12ZM1.51.59c-.35 0-.57 0-.67.05a.43.43 0 0 0-.2.2c-.05.1-.05.31-.05.67V4.4c0 .35 0 .57.05.67.04.09.12.16.2.2.1.05.31.05.67.05h5.17c.35 0 .57 0 .67-.05a.43.43 0 0 0 .2-.2c.05-.1.05-.31.05-.67V1.51c0-.35 0-.57-.05-.67a.43.43 0 0 0-.2-.2c-.1-.05-.31-.05-.67-.05H1.51ZM4.1 4.77a.3.3 0 0 1-.3-.3v-.08h-.46c-.16 0-.3-.13-.3-.3s.13-.3.3-.3h.95c.15 0 .27-.12.27-.27s-.12-.27-.27-.27h-.38a.87.87 0 0 1-.87-.87c0-.44.33-.81.76-.86v-.09c0-.16.13-.3.3-.3s.3.13.3.3v.08h.46c.16 0 .3.13.3.3s-.13.3-.3.3h-.95c-.15 0-.27.12-.27.27s.12.27.27.27h.38c.48 0 .87.39.87.87 0 .44-.33.81-.76.86v.09a.3.3 0 0 1-.3.3Zm2.28-1.33a.49.49 0 1 1 .002-.982.49.49 0 0 1-.002.982Zm-4.56 0a.49.49 0 1 1 .002-.982.49.49 0 0 1-.002.982Z"/></svg>
+                  Cash
+                </label>
+
+                <input type="radio" id="card" name="payment" class="payment-option">
+                <label for="card" class="payment-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.19 5.91"><path d="M6.68 5.91H1.51c-.46 0-.71 0-.94-.12-.2-.1-.36-.26-.46-.46-.12-.23-.12-.48-.12-.94V1.51c0-.46 0-.71.12-.94.1-.2.26-.36.46-.46.23-.12.48-.12.94-.12h5.17c.46 0 .71 0 .94.12.2.1.36.26.46.46.12.23.12.48.12.94V4.4c0 .46 0 .71-.12.94-.1.2-.26.36-.46.46-.23.12-.48.12-.94.12ZM.59 2.49V4.4c0 .35 0 .57.05.67.04.09.12.16.2.2.1.05.31.05.67.05h5.17c.35 0 .57 0 .67-.05a.43.43 0 0 0 .2-.2c.05-.1.05-.31.05-.67V2.49H.59Zm0-.59H7.6v-.39c0-.35 0-.57-.05-.67a.43.43 0 0 0-.2-.2c-.1-.05-.31-.05-.67-.05H1.51c-.35 0-.57 0-.67.05a.43.43 0 0 0-.2.2c-.05.1-.05.31-.05.67v.39Zm3.13 2.11h-1.9c-.16 0-.3-.13-.3-.3s.13-.3.3-.3h1.9c.16 0 .3.13.3.3s-.13.3-.3.3Z"/></svg>
+                  Card
+                </label>
+              </div>
+            </div>
+
+            <div class="transaction-cash">
+              <h1 class="money">$0.00</h1>
+              <div class="keyboard-modal">
+                <div class="keyboard-keys">
+                  <button type="button" class="keyboard-key top-left" data-key="1">1</button>
+                  <button type="button" class="keyboard-key" data-key="2">2</button>
+                  <button type="button" class="keyboard-key top-right" data-key="3">3</button>
+                  <button type="button" class="keyboard-key" data-key="4">4</button>
+                  <button type="button" class="keyboard-key" data-key="5">5</button>
+                  <button type="button" class="keyboard-key" data-key="6">6</button>
+                  <button type="button" class="keyboard-key" data-key="7">7</button>
+                  <button type="button" class="keyboard-key" data-key="8">8</button>
+                  <button type="button" class="keyboard-key" data-key="9">9</button>
+                  <button type="button" class="keyboard-key bottom-left" disabled></button>
+                  <button type="button" class="keyboard-key" data-key="0">0</button>
+                  <button type="button" class="keyboard-key bottom-right" data-key="del">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><g data-name="Capa_2"><path d="M49.82 17.06a7.507 7.507 0 0 0-3.32-3.32c-1.62-.83-3.38-.83-6.87-.83H25.2c-1.25 0-1.94 0-2.7.22-.68.19-1.31.51-1.88.94-.64.48-1.05 1.03-1.8 2.03l-8.2 10.94c-.58.77-.96 1.28-1.15 1.99-.17.63-.17 1.3 0 1.93.19.72.57 1.23 1.15 1.99s8.2 10.94 8.2 10.94c.75 1 1.16 1.55 1.8 2.03.56.43 1.2.75 1.88.94.77.22 1.45.22 2.7.22h14.43c3.49 0 5.24 0 6.87-.83a7.507 7.507 0 0 0 3.32-3.32c.83-1.62.83-3.38.83-6.87V23.91c0-3.49 0-5.24-.83-6.87ZM40.6 34.35a1.907 1.907 0 0 1-1.34 3.25c-.48 0-.97-.19-1.34-.56l-4.35-4.35-4.35 4.35c-.74.74-1.94.74-2.69 0-.74-.74-.74-1.94 0-2.69L30.88 30l-4.35-4.35c-.74-.74-.74-1.94 0-2.69.74-.74 1.94-.74 2.69 0l4.35 4.35 4.35-4.35c.74-.74 1.94-.74 2.69 0 .74.74.74 1.94 0 2.69L36.26 30l4.35 4.35Z"/><path style="fill:none" d="M0 0h60v60H0z"/></g></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="transaction-card">
+              <h1>
+                Insert or tap your card to pay
+              </h1>
+            </div>
+
+            <button class="complete-payment-button" disabled>
+              Complete Payment
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="payment-completed-modal">
+    <div class="payment-completed-content">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.89 5.89"><path d="M2.95 0a2.949 2.949 0 1 0 0 5.9 2.949 2.949 0 1 0 0-5.9Zm1.53 2.27L2.71 4.04a.288.288 0 0 1-.42 0l-.88-.88a.29.29 0 0 1 0-.42c.12-.12.3-.12.42 0l.68.68 1.56-1.56c.12-.12.3-.12.42 0s.12.3 0 .42Z"/></svg>
+      <div class="payment-completed-text">
+        <h2>Payment Completed!</h2>
+        <p>The payment has been successfully processed.</p>
+      </div>
+      <button class="return-button">Return to Home</button>
+    </div>
+  </section>
+
+  <script src="../src/js/keyboard.js"></script>
+  <script src="../src/js/item-controllers.js"></script>
+  <script src="../src/js/purchase.js"></script>
+</body>
+</html>

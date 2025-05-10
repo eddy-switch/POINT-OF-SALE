@@ -1,0 +1,8 @@
+@use '../base/variables' as v;
+
+.sidebar {
+  flex: 0 0 2%;  /* Ocupa el 25% del ancho */
+  border-right: 2px solid v.$gray-300;
+  padding: 20px;
+  overflow-y: auto;
+}

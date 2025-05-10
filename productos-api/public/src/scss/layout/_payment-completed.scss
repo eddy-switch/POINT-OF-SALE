@@ -1,0 +1,70 @@
+@use '../base/variables' as v;
+
+.payment-completed-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.payment-completed-modal-active{
+  pointer-events: unset;
+  opacity: 1;
+}
+
+.payment-completed-content{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 90%;
+  max-width: 450px;
+  max-height: 350px;
+  background-color: #ffffff;
+  border-radius: 1.875rem;
+
+  svg{
+    max-width: 5rem;
+    fill: v.$orange-400;
+  }
+
+  .payment-completed-text{
+    margin: 1rem 0;
+    text-align: center;
+    h2{
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    p{
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.return-button{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  padding: 0.8rem;
+  background-color: v.$orange-400;
+  font-family: v.$font_default;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.625rem;
+  color: v.$white;
+  cursor: pointer;
+}
+
+.return-button:hover{
+  background-color: v.$orange-600;
+}

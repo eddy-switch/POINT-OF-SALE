@@ -1,0 +1,185 @@
+@use '../base/variables' as v;
+
+.bill-container{
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bill-container.visible {
+  opacity: 1;
+}
+
+.bill-advice{
+  transition: opacity 0.3s ease;
+  margin: 0;
+  text-align: center;
+  color: v.$gray-300;
+  p{
+    font-size: 1.125rem;
+  }
+
+  h1{
+    font-size: 3rem;
+  }
+}
+
+.bill-advice.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.bill-details {
+  flex: 0 0 25%;  /* Ocupa el 25% del ancho */
+  border-left: 2px solid v.$gray-300;
+  padding: 20px;
+  overflow-y: auto;
+
+  p{
+    margin: 0;
+  }
+}
+
+.bill-products{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  p{
+    margin: 0;
+  }
+
+  .bill-product{
+    display: flex;
+    justify-content: space-between;
+    .price{
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.cross{
+  all: unset;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: v.$orange-400;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  svg{
+    width: 0.7rem;
+    height: 0.7rem;
+    fill: v.$white;
+  }
+}
+
+.cross:hover{
+  background-color: v.$orange-600;
+}
+
+
+.bill-info{
+  display: flex;
+  justify-content: space-between;
+
+  p{
+    margin: 0;
+    line-height: 2;
+  }
+}
+
+.right-info{
+  text-align: right;
+  color: v.$gray-600;
+}
+
+.left-info{
+  color: v.$gray-400;
+}
+
+.bill-dashboard{
+  overflow-y: scroll;
+  max-height: 405px;
+}
+
+.bill-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  h1{
+    margin: 0;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+.payment-info{
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+}
+
+.separator{
+  border: none;
+  border-top: 2px solid v.$gray-300;
+}
+
+.payment-total{
+  margin-top: 1.5rem;
+}
+
+.total{
+  display: flex;
+  justify-content: space-between;
+  p{
+    font-size: 1.5rem;
+    color: v.$gray-950;
+  }
+
+  .total-amount{
+    color: v.$orange-500;
+  }
+}
+
+.checkout-button{
+  margin: 1.5rem 0;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: v.$orange-400;
+  font-family: v.$font_default;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.625rem;
+  color: v.$white ;
+}
+
+.checkout-button:hover{
+  background-color: v.$orange-600;
+  cursor: pointer;
+}
+
+.checkout-button:disabled{
+  background-color: v.$orange-100;
+  color: v.$orange-500;
+  cursor: default;
+}
+
+
+.discount-input {
+  max-width: 3rem;
+  font-family: v.$font_mono;
+  font-size: 1rem;
+  border: 1.8px solid v.$gray-400;
+  border-radius: 0.4rem;
+}
+
+.discount-input:focus {
+  border: 1.5px solid v.$orange-400;
+}

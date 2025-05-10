@@ -1,0 +1,49 @@
+@use '../base/variables' as v;
+
+.new-order{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 3rem;
+}
+
+.new-order-button{
+  width: 20rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 2px solid v.$gray-300;
+  border-radius: 0.625rem;
+  h1{
+    font-family: v.$font_default;
+    color: v.$gray-950;
+    font-weight: 500;
+  }
+
+  svg{
+    max-width: 2rem;
+    fill: v.$gray-700;
+  }
+  background-color: v.$white;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.new-order-button:hover{
+  background-color: v.$orange-50;
+  cursor: pointer;
+  border-color: v.$orange-600;
+  transform: scale(1.1);
+  svg{
+    fill: v.$orange-600;
+  }
+}
+
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0s 0.3s, opacity 0.3s ease;
+}

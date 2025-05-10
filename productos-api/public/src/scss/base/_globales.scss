@@ -1,0 +1,25 @@
+@use '../base/variables' as v;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body{
+  font-family: v.$font_default;
+  font-weight: 500;
+}
+
+p, h1, h2, h3{
+  color: v.$gray-950;
+}
+
+h1, h2{
+  font-weight: 500;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}

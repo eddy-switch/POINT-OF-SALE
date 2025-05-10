@@ -1,0 +1,91 @@
+@use '../base/variables' as v;
+
+.keyboard{
+  position: fixed;
+  left: 38.5%;
+  bottom: -15%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  user-select: none;
+  transition: bottom 0.4s;
+  border-radius: 1.125rem;
+  box-shadow: 4px 4px 30px v.$gray-400;
+}
+
+.keyboard-modal{
+  width: 20rem;
+  user-select: none;
+  border-radius: 1.125rem;
+  margin: 0 auto;
+}
+
+.keyboard-hidden{
+  left: 38.5%;
+  bottom: -100%;
+  transform: translate(-50%, -50%);
+}
+
+.keyboard-keys{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.125rem;
+  text-align: center;
+  border: 2px solid v.$gray-300;
+  background-color: v.$gray-300;
+  border-radius: 1rem;
+}
+
+.keyboard-key{
+  height: 45px;
+  max-width: 210px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  position: relative;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-family: v.$font_mono;
+  background-color: v.$white;
+}
+
+.keyboard-key.top-left{
+  border-top-left-radius: 1rem;
+}
+
+.keyboard-key.top-left{
+  border-top-left-radius: 1rem;
+}
+
+.keyboard-key.top-right{
+  border-top-right-radius: 1rem;
+}
+
+.keyboard-key.bottom-left{
+  border-bottom-left-radius: 1rem;
+}
+
+.keyboard-key.bottom-right{
+  border-bottom-right-radius: 1rem;
+}
+
+.keyboard-key svg {
+  width: 30px;
+  height: 30px;
+}
+
+.keyboard-key:active{
+  background-color: v.$gray-300;
+}
+
+.keyboard-key:disabled{
+  background-color: v.$white;
+  cursor: default;
+}
+
+.keyboard-key.active{
+  background-color: v.$gray-300;
+}

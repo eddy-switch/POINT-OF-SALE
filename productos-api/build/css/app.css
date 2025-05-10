@@ -1,0 +1,749 @@
+@charset "UTF-8";
+.sidebar {
+  flex: 0 0 2%; /* Ocupa el 25% del ancho */
+  border-right: 2px solid #cad0d7;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.bill-container {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bill-container.visible {
+  opacity: 1;
+}
+
+.bill-advice {
+  transition: opacity 0.3s ease;
+  margin: 0;
+  text-align: center;
+  color: #cad0d7;
+}
+.bill-advice p {
+  font-size: 1.125rem;
+}
+.bill-advice h1 {
+  font-size: 3rem;
+}
+
+.bill-advice.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.bill-details {
+  flex: 0 0 25%; /* Ocupa el 25% del ancho */
+  border-left: 2px solid #cad0d7;
+  padding: 20px;
+  overflow-y: auto;
+}
+.bill-details p {
+  margin: 0;
+}
+
+.bill-products {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.bill-products p {
+  margin: 0;
+}
+.bill-products .bill-product {
+  display: flex;
+  justify-content: space-between;
+}
+.bill-products .bill-product .price {
+  font-size: 1.5rem;
+}
+
+.cross {
+  all: unset;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9a825;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.cross svg {
+  width: 0.7rem;
+  height: 0.7rem;
+  fill: #ffffff;
+}
+
+.cross:hover {
+  background-color: #d76208;
+}
+
+.bill-info {
+  display: flex;
+  justify-content: space-between;
+}
+.bill-info p {
+  margin: 0;
+  line-height: 2;
+}
+
+.right-info {
+  text-align: right;
+  color: #7a8396;
+}
+
+.left-info {
+  color: #a2acb8;
+}
+
+.bill-dashboard {
+  overflow-y: scroll;
+  max-height: 405px;
+}
+
+.bill-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.bill-section h1 {
+  margin: 0;
+}
+.bill-section p {
+  margin: 0;
+}
+
+.payment-info {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid #cad0d7;
+}
+
+.payment-total {
+  margin-top: 1.5rem;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+.total p {
+  font-size: 1.5rem;
+  color: #2f3137;
+}
+.total .total-amount {
+  color: #f3850d;
+}
+
+.checkout-button {
+  margin: 1.5rem 0;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #f9a825;
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.625rem;
+  color: #ffffff;
+}
+
+.checkout-button:hover {
+  background-color: #d76208;
+  cursor: pointer;
+}
+
+.checkout-button:disabled {
+  background-color: #fdeec8;
+  color: #f3850d;
+  cursor: default;
+}
+
+.discount-input {
+  max-width: 3rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 1rem;
+  border: 1.8px solid #a2acb8;
+  border-radius: 0.4rem;
+}
+
+.discount-input:focus {
+  border: 1.5px solid #f9a825;
+}
+
+.content {
+  flex: 1; /* Se expande automáticamente */
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.data-area {
+  width: 100%;
+  max-width: 52rem;
+}
+
+.item-search {
+  margin-top: 2rem;
+  width: 100%;
+  height: 3rem;
+  font-size: 1rem;
+  font-family: "Geist Mono", monospace;
+  border: 2px solid #cad0d7;
+  border-radius: 0.625rem;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding-left: 1rem;
+}
+
+.item-search:focus {
+  border-color: #f9a825;
+}
+
+.item-search::placeholder {
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+}
+
+.item-search:disabled {
+  background-color: #f6f7f8;
+}
+
+.purchase {
+  max-height: 34rem;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.purchase-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.item-id {
+  color: #7a8396;
+  padding: 0.2rem;
+  margin: 0;
+}
+
+.info-low {
+  color: #a2acb8;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.item-info .product {
+  flex: 1;
+}
+.item-info .product p {
+  margin: 0;
+}
+
+.price-available {
+  flex: 1;
+  text-align: right;
+}
+.price-available .info-low {
+  margin: 0;
+}
+
+.price {
+  color: #f3850d;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.item-controller {
+  display: flex;
+  gap: 3.4375rem;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 8rem;
+}
+
+.item-control {
+  all: unset;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4rem;
+  transition: transform 0.3s ease;
+}
+.item-control svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.item-control:hover {
+  transform: scale(1.1);
+}
+
+.sum-button {
+  background-color: #f9a825;
+  cursor: pointer;
+}
+.sum-button svg {
+  fill: #ffffff;
+}
+
+.min-button {
+  background-color: #dadee3;
+  cursor: pointer;
+}
+.min-button svg {
+  fill: #5c6171;
+}
+
+.sum-button:disabled {
+  background-color: #fdeec8;
+  cursor: unset;
+}
+.sum-button:disabled svg {
+  fill: #f9a825;
+}
+
+.min-button:disabled {
+  background-color: #eaecef;
+  cursor: unset;
+}
+.min-button:disabled svg {
+  fill: #a2acb8;
+}
+
+.keyboard {
+  position: fixed;
+  left: 38.5%;
+  bottom: -15%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  user-select: none;
+  transition: bottom 0.4s;
+  border-radius: 1.125rem;
+  box-shadow: 4px 4px 30px #a2acb8;
+}
+
+.keyboard-modal {
+  width: 20rem;
+  user-select: none;
+  border-radius: 1.125rem;
+  margin: 0 auto;
+}
+
+.keyboard-hidden {
+  left: 38.5%;
+  bottom: -100%;
+  transform: translate(-50%, -50%);
+}
+
+.keyboard-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.125rem;
+  text-align: center;
+  border: 2px solid #cad0d7;
+  background-color: #cad0d7;
+  border-radius: 1rem;
+}
+
+.keyboard-key {
+  height: 45px;
+  max-width: 210px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  position: relative;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-family: "Geist Mono", monospace;
+  background-color: #ffffff;
+}
+
+.keyboard-key.top-left {
+  border-top-left-radius: 1rem;
+}
+
+.keyboard-key.top-left {
+  border-top-left-radius: 1rem;
+}
+
+.keyboard-key.top-right {
+  border-top-right-radius: 1rem;
+}
+
+.keyboard-key.bottom-left {
+  border-bottom-left-radius: 1rem;
+}
+
+.keyboard-key.bottom-right {
+  border-bottom-right-radius: 1rem;
+}
+
+.keyboard-key svg {
+  width: 30px;
+  height: 30px;
+}
+
+.keyboard-key:active {
+  background-color: #cad0d7;
+}
+
+.keyboard-key:disabled {
+  background-color: #ffffff;
+  cursor: default;
+}
+
+.keyboard-key.active {
+  background-color: #cad0d7;
+}
+
+.new-order {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 3rem;
+}
+
+.new-order-button {
+  width: 20rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 2px solid #cad0d7;
+  border-radius: 0.625rem;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+.new-order-button h1 {
+  font-family: "Geist", sans-serif;
+  color: #2f3137;
+  font-weight: 500;
+}
+.new-order-button svg {
+  max-width: 2rem;
+  fill: #6d7488;
+}
+
+.new-order-button:hover {
+  background-color: #fff9eb;
+  cursor: pointer;
+  border-color: #d76208;
+  transform: scale(1.1);
+}
+.new-order-button:hover svg {
+  fill: #d76208;
+}
+
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0s 0.3s, opacity 0.3s ease;
+}
+
+.payment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7411764706);
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.payment-modal-show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.payment-content {
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  max-width: 900px;
+  max-height: 642px;
+  background-color: #ffffff;
+  border-radius: 1.875rem;
+}
+
+.payment-details {
+  margin: 2rem;
+}
+
+.payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.payment-header h1 {
+  margin: 0;
+}
+
+.payment-modal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.methods {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  gap: 1rem;
+}
+
+.money {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.payment-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 80%;
+  padding: 0.5rem 0;
+  font-family: "Geist", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.625rem;
+  background-color: #ffffff;
+  border: 2px solid #cad0d7;
+  color: #2f3137;
+}
+.payment-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #2f3137;
+}
+
+.payment-option:checked + .payment-button {
+  border-color: #f9a825;
+  color: #d76208;
+  background-color: #fff9eb;
+}
+.payment-option:checked + .payment-button svg {
+  fill: #d76208;
+}
+
+.payment-button:hover {
+  border-color: #f9a825;
+  color: #f3850d;
+  cursor: pointer;
+}
+.payment-button:hover svg {
+  fill: #f3850d;
+}
+
+.payment-option {
+  display: none;
+}
+
+.complete-payment-button {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto;
+  width: 80%;
+  padding: 0.8rem;
+  background-color: #f9a825;
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.625rem;
+  color: #ffffff;
+}
+
+.complete-payment-button:hover {
+  background-color: #d76208;
+  cursor: pointer;
+}
+
+.complete-payment-button:disabled {
+  background-color: #fdeec8;
+  color: #f3850d;
+  cursor: default;
+}
+
+.transaction-details {
+  background-color: #eaecef;
+  max-height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.transaction-details p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+.transaction-details .transaction-items {
+  margin: 0.5rem 0;
+  overflow-y: scroll;
+  max-height: 200px;
+}
+.transaction-details .transaction-items .transaction-item {
+  display: flex;
+  justify-content: space-between;
+}
+.transaction-details .transaction-items p {
+  margin: 0.25rem 0;
+}
+
+.transaction-payment {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.transaction-payment .transaction-items-details {
+  display: flex;
+  justify-content: space-between;
+}
+.transaction-payment .transaction-items-details p {
+  margin: 0;
+}
+.transaction-payment .transaction-items-details:last-of-type p {
+  font-size: 1.125rem;
+}
+
+.transaction-left {
+  color: #7a8396;
+}
+
+.transaction-card {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+.transaction-card h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+  line-height: 1;
+}
+
+.payment-completed-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7411764706);
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.payment-completed-modal-active {
+  pointer-events: unset;
+  opacity: 1;
+}
+
+.payment-completed-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 90%;
+  max-width: 450px;
+  max-height: 350px;
+  background-color: #ffffff;
+  border-radius: 1.875rem;
+}
+.payment-completed-content svg {
+  max-width: 5rem;
+  fill: #f9a825;
+}
+.payment-completed-content .payment-completed-text {
+  margin: 1rem 0;
+  text-align: center;
+}
+.payment-completed-content .payment-completed-text h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.payment-completed-content .payment-completed-text p {
+  margin-top: 0.5rem;
+}
+
+.return-button {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  padding: 0.8rem;
+  background-color: #f9a825;
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.625rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.return-button:hover {
+  background-color: #d76208;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+}
+
+p, h1, h2, h3 {
+  color: #2f3137;
+}
+
+h1, h2 {
+  font-weight: 500;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=app.css.map */

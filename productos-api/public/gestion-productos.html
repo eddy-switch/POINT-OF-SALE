@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        form { 
+            display: grid; 
+            grid-gap: 15px; 
+            margin-bottom: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(99, 1, 1, 0.1);
+        }
+        label { 
+            font-weight: bold; 
+            margin-bottom: -10px;
+        }
+        input, button, select { 
+            padding: 10px; 
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button { 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button.primary {
+            background: #4CAF50; 
+        }
+        button.primary:hover {
+            background: #45a049; 
+        }
+        button.secondary {
+            background: #f44336;
+        }
+        button.secondary:hover {
+            background: #d32f2f;
+        }
+        button.warning {
+            background: #ff9800;
+        }
+        button.warning:hover {
+            background: #e68a00;
+        }
+        button.info {
+            background: #2196F3;
+        }
+        button.info:hover {
+            background: #0b7dda;
+        }
+        #mensaje {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+        .info {
+            background-color: #d9edf7;
+            color: #31708f;
+            border: 1px solid #bce8f1;
+        }
+        .hidden {
+            display: none;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .search-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .product-actions {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .user-info {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logout-btn {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        /* Estilos para los resultados de búsqueda en tiempo real */
+        .resultados-busqueda {
+            position: absolute;
+            z-index: 1000;
+            width: calc(100% - 20px);
+            max-height: 300px;
+            overflow-y: auto;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: none;
+            margin-top: 5px;
+        }
+        .suggestion-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .suggestion-item:hover {
+            background-color: #f5f5f5;
+        }
+        .suggestion-item .price {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .suggestion-item .id {
+            color: #666;
+            font-size: 0.8em;
+        }
+        .no-results {
+            padding: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        #productListContainer {
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #productList ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #productList li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #productList li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Información del usuario y botón de logout -->
+    <div class="user-info" id="userInfo">
+        <span id="userName"></span>
+        <button class="logout-btn" id="logoutBtn">Cerrar sesión</button>
+    </div>
+
+    <h1 id="form-title">Nuevo Producto</h1>
+    
+    <form id="productoForm">
+        <input type="hidden" id="productoId">
+        
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" id="nombre" required placeholder="Ej: Laptop HP">
+        
+        <label for="codigo_barras">Código de Barras:</label>
+        <input type="text" id="codigo_barras" required placeholder="Ej: 750123456789">
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div>
+                <label for="precio_compra">Precio de Compra:</label>
+                <input type="number" id="precio_compra" step="0.01" min="0" required placeholder="Ej: 1200.50">
+            </div>
+            <div>
+                <label for="precio_venta">Precio de Venta:</label>
+                <input type="number" id="precio_venta" step="0.01" min="0" required placeholder="Ej: 1500.00">
+            </div>
+        </div>
+        
+        <label for="existencia">Existencia en Inventario:</label>
+        <input type="number" id="existencia" min="0" required placeholder="Ej: 10">
+        
+        <label for="id_proveedor">ID del Proveedor:</label>
+        <input type="number" id="id_proveedor" min="1" required placeholder="Ej: 1">
+        
+        <div class="actions">
+            <button type="submit" id="submit-btn" class="primary">Guardar Producto</button>
+            <button type="button" id="cancelarEdicion" class="secondary hidden">Cancelar Edición</button>
+        </div>
+        
+        <!-- Sección de acciones para el producto actual -->
+        <div id="productoActions" class="product-actions hidden">
+            <h3>Acciones para este producto:</h3>
+            <div class="actions">
+                <button type="button" id="eliminarProducto" class="secondary">Eliminar Producto</button>
+            </div>
+        </div>
+    </form>
+    
+    <div id="mensaje"></div>
+    
+    <!-- Sección para buscar productos -->
+    <div class="search-section">
+        <h2>Buscar Productos</h2>
+        <div style="display: grid; grid-template-columns: 1fr auto auto; gap: 10px; margin-bottom: 15px;">
+            <div style="position: relative;">
+                <input type="text" id="buscarProducto" placeholder="Buscar por ID, nombre o código de barras">
+                <!-- Aquí se insertarán dinámicamente los resultados de búsqueda -->
+            </div>
+            <button type="button" id="nuevoProducto" class="warning">Nuevo Producto</button>
+        </div>
+        <div class="actions">
+            <button type="button" id="listarProductos" class="info">Mostrar Todos los Productos</button>
+        </div>
+    </div>
+    
+    <!-- Sección para listar productos -->
+    <div id="productListContainer" class="hidden">
+        <h2>Lista de Productos</h2>
+        <div id="productList"></div>
+    </div>
+    
+    <script src="../src/js/gestion-productos.js" defer></script>
+</body>
+</html>
+
+

@@ -1,0 +1,199 @@
+@use '../base/variables' as v;
+
+.payment-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.payment-modal-show{
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.payment-content{
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  max-width: 900px;
+  max-height: 642px;
+  background-color: #ffffff;
+  border-radius: 1.875rem;
+}
+
+.payment-details{
+  margin: 2rem;
+}
+
+.payment-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+  h1{
+    margin: 0;
+  }
+}
+
+.payment-modal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Dos columnas iguales
+  gap: 2rem; // Espacio entre columnas (ajustable)
+  margin-top: 0.5rem;
+}
+
+.methods{
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  gap: 1rem;
+}
+
+.money{
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.payment-button{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 80%;
+  padding: 0.5rem 0;
+  font-family: v.$font_default;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.625rem;
+  background-color: v.$white;
+  border: 2px solid v.$gray-300;
+  color: v.$gray-950;
+
+  svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: v.$gray-950;
+  }
+}
+
+.payment-option:checked + .payment-button {
+  border-color: v.$orange-400;
+  color: v.$orange-600;
+  background-color: v.$orange-50;
+
+  svg {
+    fill: v.$orange-600;
+  }
+}
+
+.payment-button:hover{
+  border-color: v.$orange-400;
+  color: v.$orange-500;
+  cursor: pointer;
+
+  svg{
+    fill: v.$orange-500;
+  }
+}
+
+.payment-option{
+  display: none;
+}
+
+.complete-payment-button{
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto;
+  width: 80%;
+  padding: 0.8rem;
+  background-color: v.$orange-400;
+  font-family: v.$font_default;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.625rem;
+  color: v.$white;
+}
+
+.complete-payment-button:hover{
+  background-color: v.$orange-600;
+  cursor: pointer;
+}
+
+.complete-payment-button:disabled{
+  background-color: v.$orange-100;
+  color: v.$orange-500;
+  cursor: default;
+}
+
+.transaction-details {
+  background-color: v.$gray-100;
+  max-height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  p{
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  .transaction-items{
+    margin: 0.5rem 0;
+    overflow-y: scroll;
+    max-height: 200px;
+    .transaction-item{
+      display: flex;
+      justify-content: space-between;
+    }
+    p{
+      margin: 0.25rem 0;
+    }
+  }
+}
+
+.transaction-payment{
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .transaction-items-details{
+    display: flex;
+    justify-content: space-between;
+    p{
+      margin: 0;
+    }
+  }
+
+  .transaction-items-details:last-of-type{
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.transaction-left{
+  color: v.$gray-600;
+}
+
+.transaction-card{
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+  h1{
+    font-size: 3rem;
+    margin: 1rem 0;
+    line-height: 1;
+  }
+}
